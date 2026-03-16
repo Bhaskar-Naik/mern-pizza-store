@@ -4,6 +4,9 @@ Admin Login Credentials ->  email      : baachin22@gmail.com
 
 The Super admin can  acess to make admin and remove admin 
 
+https://deployment-react-app-98206.web.app ->  deployed
+
+
 
 
 #  Pizza Store - Full Stack Web Application
@@ -41,13 +44,25 @@ A modern, responsive pizza ordering platform built with React, Node.js, Express,
 - Bcrypt.js (Password Hashing)
 - Mocha & Chai (Testing)
 
-##  Installation & Setup
+##  Deployment
 
-### Prerequisites
-- Node.js (v16+)
-- MongoDB (Running locally or MongoDB Atlas)
+### Frontend (Firebase Hosting)
+1. Update `.env.production` with your backend URL
+2. Update `.firebaserc` with your Firebase project ID
+3. Run `npm run build` in frontend folder
+4. Run `firebase deploy --only hosting`
 
-### Backend Setup
+### Backend (Render/Heroku/Railway)
+1. Deploy backend folder to your preferred platform
+2. Set environment variables from `.env` file
+3. Get deployment URL and update frontend `.env.production`
+
+See `FIREBASE_DEPLOYMENT.md` for detailed instructions.
+
+##  Admin Access
+
+Email: baachin22@gmail.com
+Password: Baachi@123
 1. Navigate to the backend directory:
    ```bash
    cd backend
