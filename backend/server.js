@@ -29,7 +29,11 @@ const app = express();
 // ================= SECURITY MIDDLEWARE =================
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "https://deployment-react-app-98206.web.app",
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
   credentials: true
 }));
 
