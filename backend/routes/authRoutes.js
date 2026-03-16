@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User');
 
 const {
   register,
@@ -38,6 +39,16 @@ router.get('/profile', protect, getProfile);
 router.get('/users', protect, adminOnly, getAllUsers);
 router.put('/users/:id/make-admin', protect, adminOnly, makeAdmin);
 router.put('/users/:id/remove-admin', protect, adminOnly, removeAdmin);
+
+// Check admin users (for debugging)
+router.get('/check-admin', async (req, res) => {
+  try {
+    const admins = await User.find({ role: 'admin' }).select('name email role');
+    res.json({ success: true, admins });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
 
 
 module.exports = router;
