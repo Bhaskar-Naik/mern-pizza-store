@@ -134,3 +134,10 @@ npm test src/tests/E2E.test.js
 ### Cart
 - `GET /api/cart` - View cart
 - `POST /api/cart/add` - Add item to cart
+
+##  Documentation
+
+The project documentation including PPT and Report can be found in the [Documentation (PPT and Report)](Documentation%20(PPT%20and%20Report)/) folder.
+
+- [Project Report (PDF)](Documentation%20(PPT%20and%20Report)/Bhaskar%20Naik%20Pizza%20Store_%20Report.pdf)
+- [Project Presentation (PPTX)](Documentation%20(PPT%20and%20Report)/Bhaskar_Naik_Pizza_Store_PPT.pptx)
