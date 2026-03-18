@@ -17,8 +17,9 @@ import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
 import Profile from './pages/Profile';
 import Notifications from './pages/Notifications';
+import Dashboard from './pages/Dashboard';
 
-import Dashboard from './pages/admin/Dashboard';
+import AdminDashboard from './pages/admin/Dashboard';
 import ManageMenu from './pages/admin/ManageMenu';
 import ManageOrders from './pages/admin/ManageOrders';
 import Revenue from './pages/admin/Revenue';
@@ -49,6 +50,11 @@ const AppContent = () => {
         } />
 
         {/* Customer — sidebar layout */}
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Layout><Dashboard /></Layout>
+          </ProtectedRoute>
+        } />
         <Route path="/menu" element={
           <ProtectedRoute>
             <Layout><Menu /></Layout>
@@ -83,7 +89,7 @@ const AppContent = () => {
         {/* Admin — sidebar layout */}
         <Route path="/admin/dashboard" element={
           <ProtectedRoute adminOnly={true}>
-            <Layout><Dashboard /></Layout>
+            <Layout><AdminDashboard /></Layout>
           </ProtectedRoute>
         } />
         <Route path="/admin/menu" element={
@@ -127,7 +133,7 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <ToastProvider>
-            <Router>
+            <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
               <AppContent />
             </Router>
           </ToastProvider>

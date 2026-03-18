@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const customerLinks = [
+  { path: "/dashboard", icon: "📊", label: "Dashboard" },
   { path: "/menu", icon: "🍕", label: "Menu" },
   { path: "/cart", icon: "🛒", label: "My Cart" },
   { path: "/orders", icon: "📦", label: "My Orders" },
@@ -14,7 +15,7 @@ const adminLinks = [
   { path: "/admin/dashboard", icon: "📊", label: "Dashboard" },
   { path: "/admin/menu", icon: "🍕", label: "Manage Menu" },
   { path: "/menu", icon: "🍴", label: "Our Menu" },
-  { path: "/cart", icon: "🛒", label: "My Cart" },
+  //{ path: "/cart", icon: "🛒", label: "My Cart" },
   { path: "/admin/orders", icon: "📦", label: "Manage Orders" },
   { path: "/admin/users", icon: "👥", label: "Manage Users" },
   { path: "/admin/coupons", icon: "🎟️", label: "Coupons" },
@@ -250,26 +251,24 @@ const Sidebar = ({ onCollapse }) => {
                   alignItems: "center",
                   gap: showLabels ? "12px" : "0",
                   padding: "12px 14px",
-                  color: "white",
+                  color: "rgba(255,255,255,0.2)",
                   textDecoration: "none",
-                  background: isActive ? "rgba(255,255,255,0.2)" : "transparent",
+                  background: isActive ? "rgba(255,255,255,0.3)" : "transparent",
                   borderRadius: "10px",
                   marginBottom: "6px",
                   fontSize: "14px",
-                  fontWeight: isActive ? "700" : "500",
+                  fontWeight: isActive ? "700" : "600",
                   justifyContent: showLabels ? "flex-start" : "center",
-                  opacity: isActive ? 1 : 0.85,
+                  opacity: 1,
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                    e.currentTarget.style.opacity = 1;
+                    e.currentTarget.style.background = "rgba(255,255,255,0.12)";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive) {
                     e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.opacity = 0.85;
                   }
                 }}
               >

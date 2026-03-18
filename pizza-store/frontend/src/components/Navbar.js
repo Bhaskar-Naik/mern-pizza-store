@@ -108,6 +108,11 @@ const Navbar = () => {
                     MY ORDERS
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link fw-bold px-3" style={{ fontSize: '13px', color: '#ffc107' }} to="/dashboard">
+                    DASHBOARD
+                  </Link>
+                </li>
               </>
             )}
             {user && user.role === "admin" && (
